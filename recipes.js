@@ -7,9 +7,9 @@ db.once('open', function(){
     console.log('mongoose connected');
 
     const recipeSchema = new mongoose.Schema({
-        name: String,
-        description: String,
-        instructions: String,
+        name: { type: String, required: true, maxlength: 25 },
+        description: { type: String, maxlength: 50 },
+        instructions: { type: String, maxlength: 500 },
         ingredients: [String]
     });
 
